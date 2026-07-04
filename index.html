@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Portfolio of Saif Ul Fayaz, Electrical Engineering student at the University of Kashmir with NHPC hydropower internship experience." />
+<meta name="theme-color" content="#0f172a" />
+<title>Saif Ul Fayaz — Electrical Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fc;
+  --bg-soft:#eef2ff;
+  --surface:#ffffff;
+  --surface-2:#f8fafc;
+  --ink:#0f172a;
+  --text:#334155;
+  --muted:#64748b;
+  --line:rgba(15,23,42,.10);
+  --line-strong:rgba(15,23,42,.16);
+  --brand:#2563eb;
+  --brand-2:#7c3aed;
+  --cyan:#06b6d4;
+  --green:#10b981;
+  --amber:#f59e0b;
+  --dark:#020617;
+  --dark-2:#0f172a;
+  --white:#ffffff;
+  --shadow-sm:0 10px 28px rgba(15,23,42,.08);
+  --shadow-md:0 24px 70px rgba(15,23,42,.14);
+  --shadow-lg:0 30px 90px rgba(2,6,23,.22);
+  --radius:28px;
+  --radius-sm:18px;
+  --wrap:min(1180px, calc(100% - 40px));
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{
+  font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,.16), transparent 32rem),
+    radial-gradient(circle at 85% 8%, rgba(124,58,237,.13), transparent 30rem),
+    linear-gradient(180deg, #fbfdff 0%, var(--bg) 36%, #ffffff 100%);
+  color:var(--ink);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+body.menu-open{overflow:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+::selection{background:rgba(37,99,235,.18);color:var(--brand)}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#eef2f7}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border:3px solid #eef2f7;border-radius:999px}
+
+.skip-link{
+  position:absolute;left:18px;top:-100px;z-index:2000;
+  background:#fff;color:var(--ink);padding:10px 14px;border-radius:12px;
+  box-shadow:var(--shadow-sm);transition:.2s ease;
+}
+.skip-link:focus{top:18px}
+
+/* NAV */
+.site-nav{
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);
+  width:var(--wrap);z-index:1000;
+  display:flex;align-items:center;gap:18px;
+  padding:10px;
+  border:1px solid rgba(255,255,255,.68);
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(22px) saturate(150%);
+  border-radius:24px;
+  box-shadow:0 18px 55px rgba(15,23,42,.10);
+}
+.brand{
+  display:flex;align-items:center;gap:12px;text-decoration:none;
+  min-width:max-content;padding-right:4px;
+}
+.logo{
+  width:46px;height:46px;border-radius:16px;display:grid;place-items:center;
+  color:#fff;font-family:"Space Grotesk",sans-serif;font-weight:800;letter-spacing:-.06em;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.18), transparent 42%),
+    linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow:0 16px 35px rgba(37,99,235,.28);
+}
+.brand-text{display:grid;line-height:1.15}
+.brand-text strong{font-family:"Space Grotesk",sans-serif;font-size:15px;letter-spacing:-.02em;white-space:nowrap}
+.brand-text span{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.nav-links{
+  margin-left:auto;display:flex;align-items:center;gap:4px;
+  list-style:none;padding:5px;border:1px solid rgba(15,23,42,.07);
+  background:rgba(248,250,252,.76);border-radius:18px;
+}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:38px;
+  padding:0 14px;border-radius:13px;text-decoration:none;
+  color:#475569;font-size:13px;font-weight:800;letter-spacing:-.01em;
+  transition:.2s ease;
+}
+.nav-links a:hover,.nav-links a.active{background:#fff;color:var(--brand);box-shadow:0 8px 20px rgba(15,23,42,.08)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn,.menu-btn{
+  border:1px solid rgba(15,23,42,.09);background:#fff;color:var(--ink);
+  min-width:42px;height:42px;border-radius:15px;display:grid;place-items:center;
+  box-shadow:0 10px 22px rgba(15,23,42,.06);cursor:pointer;text-decoration:none;transition:.2s ease;
+}
+.icon-btn:hover,.menu-btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(15,23,42,.12)}
+.icon-btn svg,.menu-btn svg{width:18px;height:18px}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 16px;
+  border-radius:15px;border:0;background:linear-gradient(135deg,var(--dark),#1e293b);
+  color:#fff;text-decoration:none;font-size:13px;font-weight:900;letter-spacing:-.01em;
+  box-shadow:0 16px 34px rgba(2,6,23,.20);transition:.2s ease;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 22px 44px rgba(2,6,23,.24)}
+.menu-btn{display:none}
+.mobile-panel{
+  display:none;position:fixed;inset:0;z-index:999;background:rgba(2,6,23,.52);
+  backdrop-filter:blur(10px);padding:88px 20px 20px;
+}
+.mobile-card{
+  width:min(420px,100%);margin:0 auto;background:#fff;border-radius:28px;padding:14px;
+  box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.7);
+}
+.mobile-card a{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  text-decoration:none;color:var(--ink);font-weight:850;padding:16px 16px;border-radius:18px;
+  border-bottom:1px solid rgba(15,23,42,.06);
+}
+.mobile-card a:last-child{border-bottom:0;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;margin-top:6px}
+.mobile-card a:hover{background:#f8fafc}
+.mobile-card a:last-child:hover{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+.mobile-panel.open{display:block;animation:fadeIn .18s ease both}
+
+/* GENERAL */
+.wrap{width:var(--wrap);margin-inline:auto}
+.section{padding:110px 0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;
+  color:var(--brand);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+}
+.eyebrow::before{content:"";width:30px;height:2px;border-radius:999px;background:currentColor}
+.section-title{
+  font-family:"Space Grotesk",sans-serif;font-size:clamp(34px,5vw,58px);
+  line-height:.98;letter-spacing:-.055em;margin-bottom:18px;
+}
+.section-title span{color:var(--brand)}
+.section-lead{max-width:720px;color:var(--muted);font-size:17px;line-height:1.9;margin-bottom:42px}
+.card{
+  background:rgba(255,255,255,.82);border:1px solid rgba(15,23,42,.08);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.80),transparent 38%);
+}
+.card > *{position:relative;z-index:1}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;padding:132px 0 78px;display:grid;align-items:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-20% -12% auto auto;width:620px;height:620px;border-radius:999px;
+  background:radial-gradient(circle,rgba(37,99,235,.24),rgba(124,58,237,.14) 38%,transparent 70%);
+  filter:blur(8px);pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:170px;
+  background:linear-gradient(180deg,transparent,#fff);pointer-events:none;
+}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.72fr);gap:42px;align-items:center}
+.hero-copy{max-width:760px}
+.availability{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;padding:8px 13px 8px 9px;
+  border:1px solid rgba(37,99,235,.16);background:rgba(255,255,255,.72);border-radius:999px;
+  color:#1e40af;font-size:13px;font-weight:850;box-shadow:0 10px 28px rgba(37,99,235,.08);
+}
+.pulse{width:12px;height:12px;border-radius:999px;background:var(--green);box-shadow:0 0 0 8px rgba(16,185,129,.13)}
+.hero h1{
+  font-family:"Space Grotesk",sans-serif;font-size:clamp(48px,8.8vw,112px);
+  line-height:.88;letter-spacing:-.08em;margin-bottom:26px;
+}
+.hero h1 .stroke{
+  display:block;color:transparent;-webkit-text-stroke:2px rgba(15,23,42,.26);text-shadow:none;
+}
+.gradient-text{background:linear-gradient(135deg,var(--brand),var(--brand-2) 58%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-subtitle{
+  max-width:670px;color:#475569;font-size:clamp(18px,2.2vw,22px);line-height:1.75;margin-bottom:30px;
+}
+.hero-subtitle strong{color:var(--ink)}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 20px;border-radius:17px;
+  text-decoration:none;border:1px solid transparent;font-size:14px;font-weight:900;letter-spacing:-.01em;transition:.22s ease;cursor:pointer;
+}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 22px 45px rgba(37,99,235,.25)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 28px 58px rgba(37,99,235,.32)}
+.btn-soft{background:#fff;color:var(--ink);border-color:rgba(15,23,42,.10);box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.btn-soft:hover{transform:translateY(-3px);border-color:rgba(37,99,235,.22);color:var(--brand)}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.meta-pill{
+  display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(15,23,42,.08);border-radius:999px;
+  background:rgba(255,255,255,.7);color:#475569;font-size:13px;font-weight:750;
+}
+.meta-pill svg{width:15px;height:15px;color:var(--brand)}
+
+.profile-shell{position:relative}
+.profile-shell::before{
+  content:"";position:absolute;inset:-18px;border-radius:36px;
+  background:linear-gradient(135deg,rgba(37,99,235,.24),rgba(124,58,237,.14),rgba(6,182,212,.16));
+  filter:blur(18px);opacity:.95;
+}
+.profile-card{
+  position:relative;border-radius:34px;padding:18px;
+  background:rgba(255,255,255,.68);border:1px solid rgba(255,255,255,.76);
+  box-shadow:var(--shadow-lg);backdrop-filter:blur(22px);
+}
+.profile-top{
+  min-height:295px;border-radius:26px;overflow:hidden;position:relative;padding:26px;
+  background:
+    radial-gradient(circle at 28% 15%,rgba(255,255,255,.35),transparent 24%),
+    linear-gradient(140deg,#0f172a 0%,#1e3a8a 48%,#7c3aed 100%);
+  color:#fff;
+}
+.profile-top::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size:34px 34px;mask-image:linear-gradient(180deg,#000,transparent 72%);opacity:.65;
+}
+.profile-initials{
+  position:absolute;right:22px;bottom:10px;font-family:"Space Grotesk",sans-serif;
+  font-size:130px;line-height:.85;font-weight:800;letter-spacing:-.12em;color:rgba(255,255,255,.10);
+}
+.profile-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);font-size:12px;font-weight:850;backdrop-filter:blur(12px);
+}
+.profile-name{position:absolute;left:26px;right:26px;bottom:26px}
+.profile-name h2{font-family:"Space Grotesk",sans-serif;font-size:34px;line-height:1;letter-spacing:-.05em;margin-bottom:10px}
+.profile-name p{color:rgba(255,255,255,.70);font-size:14px;font-weight:650;max-width:290px}
+.quick-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.stat{border-radius:20px;background:#fff;border:1px solid rgba(15,23,42,.08);padding:16px 12px;text-align:center}
+.stat strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:24px;line-height:1;color:var(--ink);letter-spacing:-.05em}
+.stat span{display:block;margin-top:6px;color:var(--muted);font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.profile-list{display:grid;gap:10px;margin-top:12px}
+.profile-row{
+  display:flex;align-items:center;gap:12px;padding:13px;border-radius:20px;background:#fff;border:1px solid rgba(15,23,42,.08);
+}
+.row-icon{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:#eff6ff;color:var(--brand);flex:0 0 auto}
+.row-icon svg{width:18px;height:18px}
+.row-text small{display:block;color:var(--muted);font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;line-height:1.15;margin-bottom:3px}
+.row-text span{display:block;color:var(--ink);font-size:14px;font-weight:800;line-height:1.25}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:28px;align-items:start}
+.about-card{padding:36px}
+.about-card p{color:#475569;font-size:16px;line-height:1.95;margin-bottom:18px}
+.about-card p:last-child{margin-bottom:0}
+.about-card strong{color:var(--ink)}
+.info-stack{display:grid;gap:14px}
+.info-card{padding:20px;border-radius:24px;background:#fff;border:1px solid rgba(15,23,42,.08);box-shadow:var(--shadow-sm)}
+.info-card h3{font-family:"Space Grotesk",sans-serif;font-size:16px;letter-spacing:-.03em;margin-bottom:4px}
+.info-card p{font-size:14px;color:var(--muted);line-height:1.7}
+.info-card.highlight{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;box-shadow:var(--shadow-md)}
+.info-card.highlight p{color:rgba(255,255,255,.72)}
+.info-card.highlight .mini-tag{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.18)}
+.mini-tag{display:inline-flex;margin-bottom:12px;padding:6px 10px;border-radius:999px;background:#eff6ff;border:1px solid rgba(37,99,235,.12);color:var(--brand);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+
+/* EDUCATION + TIMELINE */
+.timeline{position:relative;display:grid;gap:18px}
+.timeline::before{content:"";position:absolute;left:27px;top:18px;bottom:18px;width:2px;background:linear-gradient(var(--brand),rgba(37,99,235,.05))}
+.timeline-item{position:relative;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start}
+.dot{width:56px;height:56px;border-radius:20px;display:grid;place-items:center;background:#fff;border:1px solid rgba(37,99,235,.14);box-shadow:0 14px 30px rgba(37,99,235,.11);color:var(--brand);z-index:1}
+.dot svg{width:22px;height:22px}
+.timeline-card{padding:26px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:26px;box-shadow:var(--shadow-sm)}
+.timeline-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:10px}
+.timeline-card h3{font-family:"Space Grotesk",sans-serif;font-size:22px;line-height:1.15;letter-spacing:-.04em}
+.period{white-space:nowrap;display:inline-flex;padding:7px 10px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:12px;font-weight:900}
+.timeline-card p{color:var(--muted);font-size:15px;line-height:1.8}
+.status{display:inline-flex;margin-left:8px;padding:5px 8px;border-radius:999px;background:rgba(16,185,129,.10);color:#047857;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle}
+.status.cert{background:rgba(245,158,11,.12);color:#b45309}
+
+/* EXPERIENCE */
+.experience-card{display:grid;grid-template-columns:360px 1fr;overflow:hidden;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:34px;box-shadow:var(--shadow-md)}
+.exp-side{position:relative;min-height:100%;padding:34px;color:#fff;background:linear-gradient(145deg,#020617,#12347a 58%,#2563eb)}
+.exp-side::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 20% 20%,rgba(255,255,255,.20),transparent 18rem),linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:auto,34px 34px,34px 34px;opacity:.8}
+.exp-side > *{position:relative;z-index:1}
+.nhpc-mark{width:96px;height:96px;border-radius:28px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.20);display:grid;place-items:center;margin-bottom:26px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+.nhpc-mark strong{font-family:"Space Grotesk",sans-serif;font-size:23px;letter-spacing:.06em}
+.exp-side h3{font-family:"Space Grotesk",sans-serif;font-size:34px;line-height:1;letter-spacing:-.06em;margin-bottom:12px}
+.exp-side p{color:rgba(255,255,255,.70);font-weight:650;line-height:1.8}
+.exp-main{padding:38px}
+.exp-main .kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:var(--brand);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.exp-main h3{font-family:"Space Grotesk",sans-serif;font-size:34px;letter-spacing:-.055em;line-height:1.05;margin-bottom:10px}
+.exp-main p{color:#475569;line-height:1.95;margin-bottom:22px}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0}
+.highlight{padding:18px;border-radius:22px;background:#f8fafc;border:1px solid rgba(15,23,42,.07)}
+.highlight svg{width:22px;height:22px;color:var(--brand);margin-bottom:12px}
+.highlight strong{display:block;font-size:14px;line-height:1.35;margin-bottom:5px}
+.highlight span{display:block;color:var(--muted);font-size:13px;line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border-radius:999px;background:#fff;border:1px solid rgba(15,23,42,.10);color:#475569;font-size:13px;font-weight:800;box-shadow:0 8px 18px rgba(15,23,42,.04)}
+
+/* PROJECTS */
+.project-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.project-feature{padding:34px;background:linear-gradient(145deg,#0f172a,#1e293b);color:#fff;border-radius:34px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.project-feature::before{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:999px;background:radial-gradient(circle,rgba(37,99,235,.55),transparent 68%)}
+.project-feature::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,transparent,rgba(37,99,235,.16))}
+.project-feature > *{position:relative;z-index:1}
+.project-feature h3{font-family:"Space Grotesk",sans-serif;font-size:36px;line-height:1.05;letter-spacing:-.055em;margin-bottom:16px}
+.project-feature p{color:rgba(255,255,255,.74);line-height:1.9;margin-bottom:22px}
+.project-list{display:grid;gap:20px}
+.project-card{padding:26px;border-radius:30px;background:#fff;border:1px solid rgba(15,23,42,.08);box-shadow:var(--shadow-sm)}
+.project-card h3{font-family:"Space Grotesk",sans-serif;font-size:23px;letter-spacing:-.04em;margin-bottom:10px}
+.project-card p{color:var(--muted);line-height:1.8;font-size:15px;margin-bottom:16px}
+.project-icon{width:52px;height:52px;border-radius:20px;display:grid;place-items:center;background:#eff6ff;color:var(--brand);margin-bottom:18px}
+.project-icon svg{width:24px;height:24px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill-card{padding:26px;border-radius:30px;background:#fff;border:1px solid rgba(15,23,42,.08);box-shadow:var(--shadow-sm);transition:.22s ease}
+.skill-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:rgba(37,99,235,.18)}
+.skill-top{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.skill-icon{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;background:#f1f5ff;color:var(--brand)}
+.skill-icon svg{width:22px;height:22px}
+.skill-card h3{font-family:"Space Grotesk",sans-serif;font-size:18px;letter-spacing:-.035em}
+.skill-list{display:flex;flex-wrap:wrap;gap:8px}
+.skill-list span{display:inline-flex;padding:8px 10px;border-radius:12px;background:#f8fafc;color:#475569;border:1px solid rgba(15,23,42,.06);font-size:12px;font-weight:800}
+
+/* CONTACT */
+.contact-section{padding:120px 0;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%)}
+.contact-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}
+.contact-hero{padding:36px;border-radius:34px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.contact-hero::before{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:999px;background:rgba(255,255,255,.16)}
+.contact-hero h2{font-family:"Space Grotesk",sans-serif;font-size:42px;line-height:1;letter-spacing:-.06em;margin-bottom:14px;position:relative}
+.contact-hero p{color:rgba(255,255,255,.78);line-height:1.85;position:relative}
+.contact-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.contact-link{display:flex;align-items:center;gap:14px;padding:18px;border-radius:24px;background:#fff;border:1px solid rgba(15,23,42,.08);text-decoration:none;box-shadow:var(--shadow-sm);transition:.22s ease;color:var(--ink)}
+.contact-link:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);color:var(--brand)}
+.contact-link .row-icon{background:#eff6ff}
+.contact-link small{display:block;color:var(--muted);font-size:11px;font-weight:900;letter-spacing:.10em;text-transform:uppercase;line-height:1.1;margin-bottom:4px}
+.contact-link strong{font-size:14px;line-height:1.25;word-break:break-word}
+.copy-btn{font-family:inherit;width:100%;text-align:left;cursor:pointer}
+
+/* RESUME STRIP */
+.resume-strip{padding:44px 0;background:#020617;color:#fff;position:relative;overflow:hidden}
+.resume-strip::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 14% 50%,rgba(37,99,235,.35),transparent 30rem),radial-gradient(circle at 84% 50%,rgba(124,58,237,.30),transparent 26rem)}
+.resume-inner{position:relative;width:var(--wrap);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.resume-inner h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(28px,4vw,44px);line-height:1;letter-spacing:-.055em;margin-bottom:8px}
+.resume-inner p{color:rgba(255,255,255,.62)}
+.resume-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-white{background:#fff;color:#020617;box-shadow:0 18px 42px rgba(255,255,255,.10)}
+.btn-white:hover{transform:translateY(-3px)}
+.btn-dark-soft{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.16);color:#fff}
+.btn-dark-soft:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+
+/* FOOTER */
+.footer{padding:44px 0;background:#020617;color:#fff}
+.footer-grid{width:var(--wrap);margin:auto;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.footer strong{font-family:"Space Grotesk",sans-serif;font-size:20px;letter-spacing:-.04em}
+.footer p{color:rgba(255,255,255,.45);font-size:13px;margin-top:5px}
+.footer-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.footer-links a{display:inline-flex;align-items:center;min-height:38px;padding:0 12px;border-radius:13px;text-decoration:none;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);color:rgba(255,255,255,.72);font-size:13px;font-weight:800;transition:.2s ease}
+.footer-links a:hover{background:rgba(255,255,255,.13);color:#fff}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+@media(max-width:1060px){
+  .nav-links,.nav-actions .icon-btn{display:none}
+  .menu-btn{display:grid}
+  .site-nav{top:10px;width:min(100% - 24px, 1180px)}
+  .hero-grid,.about-grid,.experience-card,.project-grid,.contact-panel{grid-template-columns:1fr}
+  .profile-shell{max-width:560px}
+  .experience-card{border-radius:30px}
+  .highlight-grid,.skills-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-links{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  :root{--wrap:min(100% - 28px, 1180px);--radius:24px}
+  .section{padding:82px 0}
+  .hero{padding:112px 0 56px}
+  .brand-text span{display:none}
+  .nav-cta{display:none}
+  .site-nav{border-radius:20px}
+  .hero h1{font-size:clamp(52px,16vw,76px)}
+  .hero h1 .stroke{-webkit-text-stroke:1.4px rgba(15,23,42,.25)}
+  .hero-subtitle{font-size:17px}
+  .btn{width:100%;min-height:54px}
+  .hero-actions,.resume-actions{width:100%}
+  .profile-top{min-height:260px;padding:22px}
+  .profile-name{left:22px;right:22px;bottom:22px}
+  .profile-initials{font-size:104px}
+  .quick-stats{grid-template-columns:1fr 1fr}
+  .quick-stats .stat:last-child{grid-column:1/-1}
+  .about-card,.exp-main,.project-feature,.contact-hero{padding:26px}
+  .timeline::before{left:23px}
+  .timeline-item{grid-template-columns:48px 1fr;gap:14px}
+  .dot{width:48px;height:48px;border-radius:17px}
+  .timeline-head{display:grid;gap:10px}
+  .period{width:max-content}
+  .highlight-grid,.skills-grid,.contact-links{grid-template-columns:1fr}
+  .exp-side{padding:28px;min-height:310px}
+  .exp-side h3,.exp-main h3,.project-feature h3{font-size:30px}
+  .section-title{font-size:clamp(34px,12vw,48px)}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-links{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-nav" id="topNav">
+  <a href="#home" class="brand" aria-label="Saif Ul Fayaz home">
+    <div class="logo">SF</div>
+    <div class="brand-text">
+      <strong>Saif Ul Fayaz</strong>
+      <span>Electrical Engineer</span>
+    </div>
+  </a>
+
+  <ul class="nav-links" aria-label="Primary navigation">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a class="icon-btn" href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a class="nav-cta" href="Saif_Ul_Fayaz_Resume.pdf" download>
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+      Resume
+    </a>
+    <button class="menu-btn" type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+  <div class="mobile-card">
+    <a href="#about">About <span>01</span></a>
+    <a href="#education">Education <span>02</span></a>
+    <a href="#experience">Experience <span>03</span></a>
+    <a href="#projects">Projects <span>04</span></a>
+    <a href="#skills">Skills <span>05</span></a>
+    <a href="#contact">Contact <span>06</span></a>
+    <a href="Saif_Ul_Fayaz_Resume.pdf" download>Download Resume <span>↗</span></a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal visible">
+        <div class="availability"><span class="pulse"></span> B.Tech Electrical Engineering · Class of 2026</div>
+        <h1>Saif Ul <span class="stroke">Fayaz</span></h1>
+        <p class="hero-subtitle">
+          Electrical Engineering student at the <strong>University of Kashmir</strong>, with practical industry exposure at <strong>NHPC Limited</strong> and a strong interest in power systems, hydropower, grid operations and modern energy infrastructure.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#experience">
+            View Experience
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-soft" href="Saif_Ul_Fayaz_Resume.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download Resume
+          </a>
+        </div>
+        <div class="hero-meta" aria-label="Quick profile details">
+          <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg> Bandipora, J&amp;K</span>
+          <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> University of Kashmir</span>
+          <span class="meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-14h-8Z"/></svg> Power Systems</span>
+        </div>
+      </div>
+
+      <aside class="profile-shell reveal visible" aria-label="Profile summary">
+        <div class="profile-card">
+          <div class="profile-top">
+            <div class="profile-badge">Final Year · 8th Semester</div>
+            <div class="profile-initials">SF</div>
+            <div class="profile-name">
+              <h2>Electrical Engineer</h2>
+              <p>Focused on practical power engineering, hydropower systems and reliable energy infrastructure.</p>
+            </div>
+          </div>
+          <div class="quick-stats">
+            <div class="stat"><strong>8th</strong><span>Semester</span></div>
+            <div class="stat"><strong>2026</strong><span>Graduate</span></div>
+            <div class="stat"><strong>NHPC</strong><span>Internship</span></div>
+          </div>
+          <div class="profile-list">
+            <div class="profile-row">
+              <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h20v12H2z"/><path d="m2 7 10 7 10-7"/></svg></div>
+              <div class="row-text"><small>Email</small><span>contact@saiful.in</span></div>
+            </div>
+            <div class="profile-row">
+              <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.18 4.18 2 2 0 0 1 4.16 2h3a2 2 0 0 1 2 1.72c.12.92.34 1.82.66 2.66a2 2 0 0 1-.45 2.12L8.1 9.77a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.12-.45c.84.32 1.74.54 2.66.66A2 2 0 0 1 22 16.92Z"/></svg></div>
+              <div class="row-text"><small>Phone</small><span>+91 78899 51631</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="eyebrow reveal">Profile</div>
+      <h2 class="section-title reveal">About <span>Me</span></h2>
+      <p class="section-lead reveal">A clean overview of my academic journey, technical direction and practical industry exposure.</p>
+      <div class="about-grid">
+        <div class="card about-card reveal">
+          <p>I am a <strong>final-year Electrical Engineering student</strong> at the University of Kashmir, on track to graduate in 2026. My academic journey is driven by a strong interest in electrical systems, power infrastructure and the engineering principles behind modern energy networks.</p>
+          <p>Alongside my engineering programme, I hold an <strong>NCVT-certified COPA diploma</strong> from ITI Bandipora, giving me a practical computing and IT foundation that complements my core technical background.</p>
+          <p>My internship at the <strong>Kishanganga Hydroelectric Power Station</strong> under NHPC Limited gave me first-hand exposure to utility-scale power generation, high-voltage substations, grid-level operations and safety practices in a live power environment.</p>
+          <p>I come from Bandipora, a district with strong renewable energy potential, and I am motivated to contribute to reliable and sustainable energy development.</p>
+        </div>
+        <div class="info-stack reveal">
+          <div class="info-card highlight">
+            <span class="mini-tag">Core Direction</span>
+            <h3>Power Systems &amp; Energy</h3>
+            <p>Interested in generation, transmission, grid operation, hydropower, high-voltage systems and practical electrical infrastructure.</p>
+          </div>
+          <div class="info-card">
+            <span class="mini-tag">Education</span>
+            <h3>B.Tech Electrical Engineering</h3>
+            <p>University of Kashmir · 8th semester · graduating 2026.</p>
+          </div>
+          <div class="info-card">
+            <span class="mini-tag">Credential</span>
+            <h3>NCVT COPA Diploma</h3>
+            <p>Computer Operator &amp; Programming Assistant, ITI Bandipora.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="eyebrow reveal">Academic Background</div>
+      <h2 class="section-title reveal">Education <span>Timeline</span></h2>
+      <p class="section-lead reveal">A structured view of my engineering degree, vocational certification and school foundation.</p>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div class="timeline-card">
+            <div class="timeline-head"><h3>B.Tech — Electrical Engineering <span class="status">Ongoing</span></h3><span class="period">2022 — 2026</span></div>
+            <p>University of Kashmir. Currently in the 8th and final semester, with coursework across power systems, electrical machines, circuit theory, control systems, electronics, instrumentation, energy management and restructuring of power systems.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/><path d="M21 12a9 9 0 1 1-6.3-8.6"/></svg></div>
+          <div class="timeline-card">
+            <div class="timeline-head"><h3>COPA — Computer Operator &amp; Programming Assistant <span class="status cert">NCVT</span></h3><span class="period">Diploma</span></div>
+            <p>ITI Bandipora. National Council for Vocational Training certification covering IT fundamentals, MS Office, basic programming and computer operations.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg></div>
+          <div class="timeline-card">
+            <div class="timeline-head"><h3>Higher Secondary — 12th Class</h3><span class="period">Science</span></div>
+            <p>NM Boys Higher Secondary School, Bandipora. Built a strong science foundation for engineering studies.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="M2 15l10 6 10-6"/><path d="M2 12l10 6 10-6"/></svg></div>
+          <div class="timeline-card">
+            <div class="timeline-head"><h3>Secondary — 10th Class</h3><span class="period">Foundation</span></div>
+            <p>Faiz-e-Aam Secondary School, Bandipora. Developed early grounding in mathematics, science and analytical thinking.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="eyebrow reveal">Industry Exposure</div>
+      <h2 class="section-title reveal">NHPC <span>Experience</span></h2>
+      <p class="section-lead reveal">Practical power-sector exposure inside a live hydropower generation environment.</p>
+      <article class="experience-card reveal">
+        <div class="exp-side">
+          <div class="nhpc-mark"><strong>NHPC</strong></div>
+          <h3>Kishanganga Power Station</h3>
+          <p>Engineering internship at NHPC Limited, Bandipora, Jammu &amp; Kashmir.</p>
+        </div>
+        <div class="exp-main">
+          <div class="kicker">Engineering Internship · 2024–2025</div>
+          <h3>Utility-grade hydropower exposure</h3>
+          <p>Completed an internship at the Kishanganga Hydroelectric Power Station — a major run-of-river project operated by NHPC Limited. The experience translated classroom learning into practical understanding of generation units, substation infrastructure, power evacuation and safety-focused utility operation.</p>
+          <div class="highlight-grid">
+            <div class="highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-14h-8Z"/></svg>
+              <strong>Power Generation</strong><span>Hydropower systems and energy conversion process.</span>
+            </div>
+            <div class="highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/><circle cx="12" cy="12" r="9"/></svg>
+              <strong>HV Substations</strong><span>High-voltage infrastructure and operational safety.</span>
+            </div>
+            <div class="highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17 10 11l4 4 6-8"/><path d="M20 7v6h-6"/></svg>
+              <strong>Grid Operations</strong><span>Power evacuation and national grid integration.</span>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">Hydropower</span><span class="chip">NHPC Limited</span><span class="chip">Power Generation</span><span class="chip">HV Substations</span><span class="chip">Grid Operations</span><span class="chip">Renewable Energy</span><span class="chip">Technical Reporting</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="eyebrow reveal">Selected Work</div>
+      <h2 class="section-title reveal">Projects &amp; <span>Focus</span></h2>
+      <p class="section-lead reveal">A portfolio should show direction, not only qualifications. This section highlights the practical areas I am building around.</p>
+      <div class="project-grid">
+        <article class="project-feature reveal">
+          <span class="mini-tag">Final Year Project</span>
+          <h3>Solid State Transformer</h3>
+          <p>Academic project work focused on modern power-electronic transformer concepts, control, conversion stages and cleaner integration of electrical energy systems.</p>
+          <div class="chips">
+            <span class="chip">Power Electronics</span><span class="chip">SST</span><span class="chip">MATLAB / Simulink</span><span class="chip">Control Systems</span>
+          </div>
+        </article>
+        <div class="project-list">
+          <article class="project-card reveal">
+            <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+            <h3>Power Systems Learning</h3>
+            <p>Strong academic focus on restructuring of power systems, energy management, LMP concepts, generation economics and grid-level decision making.</p>
+            <div class="chips"><span class="chip">RPS</span><span class="chip">LMP</span><span class="chip">Energy Markets</span></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/></svg></div>
+            <h3>Computing Foundation</h3>
+            <p>NCVT COPA background supporting documentation, data handling, technical reporting and practical computer operations.</p>
+            <div class="chips"><span class="chip">MS Office</span><span class="chip">Data</span><span class="chip">Programming Basics</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="eyebrow reveal">Capabilities</div>
+      <h2 class="section-title reveal">Skills &amp; <span>Expertise</span></h2>
+      <p class="section-lead reveal">Grouped clearly so recruiters can scan technical, software and professional strengths quickly.</p>
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-top"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-14h-8Z"/></svg></div><h3>Power Systems</h3></div>
+          <div class="skill-list"><span>Power Generation</span><span>Distribution</span><span>Hydroelectric Systems</span><span>Load Flow</span><span>Grid Operations</span><span>Market Restructuring</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg></div><h3>Electrical Engineering</h3></div>
+          <div class="skill-list"><span>Circuit Theory</span><span>Electrical Machines</span><span>Control Systems</span><span>Electronics</span><span>Instrumentation</span><span>High Voltage</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Computing &amp; IT</h3></div>
+          <div class="skill-list"><span>MS Office</span><span>Computer Operations</span><span>Basic Programming</span><span>Data Management</span><span>IT Fundamentals</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Professional Skills</h3></div>
+          <div class="skill-list"><span>Analytical Thinking</span><span>Problem Solving</span><span>Team Collaboration</span><span>Communication</span><span>Adaptability</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></div><h3>Languages</h3></div>
+          <div class="skill-list"><span>English</span><span>Urdu</span><span>Kashmiri</span><span>Hindi</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 2l9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div><h3>Industry Knowledge</h3></div>
+          <div class="skill-list"><span>Utility Operations</span><span>Renewable Energy</span><span>NHPC Procedures</span><span>Safety Protocols</span><span>Technical Reporting</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <div class="contact-hero">
+          <h2>Let’s connect.</h2>
+          <p>For internships, entry-level engineering roles, collaborations or professional communication, you can reach me through email, phone or LinkedIn.</p>
+        </div>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:contact@saiful.in">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h20v12H2z"/><path d="m2 7 10 7 10-7"/></svg></div>
+            <div><small>Email</small><strong>contact@saiful.in</strong></div>
+          </a>
+          <a class="contact-link" href="tel:+917889951631">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.18 4.18 2 2 0 0 1 4.16 2h3a2 2 0 0 1 2 1.72c.12.92.34 1.82.66 2.66a2 2 0 0 1-.45 2.12L8.1 9.77a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.12-.45c.84.32 1.74.54 2.66.66A2 2 0 0 1 22 16.92Z"/></svg></div>
+            <div><small>Phone</small><strong>+91 78899 51631</strong></div>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+            <div><small>LinkedIn</small><strong>linkedin.com/in/saifulfayaz</strong></div>
+          </a>
+          <button class="contact-link copy-btn" type="button" data-copy="contact@saiful.in">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
+            <div><small>Copy Email</small><strong id="copyText">Click to copy</strong></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-strip" id="resume">
+    <div class="resume-inner">
+      <div>
+        <h2>Need the complete CV?</h2>
+        <p>Download the resume PDF or open the LinkedIn profile.</p>
+      </div>
+      <div class="resume-actions">
+        <a class="btn btn-white" href="Saif_Ul_Fayaz_Resume.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download Resume
+        </a>
+        <a class="btn btn-dark-soft" href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn Profile
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <strong>Saif Ul Fayaz</strong>
+      <p>Electrical Engineering Student · University of Kashmir · Bandipora, Jammu &amp; Kashmir</p>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="mailto:contact@saiful.in">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const mobilePanel = document.getElementById('mobilePanel');
+const mobileLinks = mobilePanel.querySelectorAll('a');
+
+function closeMenu(){
+  mobilePanel.classList.remove('open');
+  mobilePanel.setAttribute('aria-hidden', 'true');
+  menuBtn.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+}
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = mobilePanel.classList.toggle('open');
+  mobilePanel.setAttribute('aria-hidden', String(!isOpen));
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  document.body.classList.toggle('menu-open', isOpen);
+});
+mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+mobilePanel.addEventListener('click', event => { if(event.target === mobilePanel) closeMenu(); });
+document.addEventListener('keydown', event => { if(event.key === 'Escape') closeMenu(); });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const sections = [...document.querySelectorAll('main section[id]')];
+const navLinks = [...document.querySelectorAll('.nav-links a')];
+const activeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+    }
+  });
+},{threshold:.45});
+sections.forEach(section => activeObserver.observe(section));
+
+const copyBtn = document.querySelector('[data-copy]');
+const copyText = document.getElementById('copyText');
+if(copyBtn && copyText){
+  copyBtn.addEventListener('click', async () => {
+    try{
+      await navigator.clipboard.writeText(copyBtn.dataset.copy);
+      copyText.textContent = 'Email copied';
+      setTimeout(() => copyText.textContent = 'Click to copy', 1600);
+    }catch(error){
+      copyText.textContent = copyBtn.dataset.copy;
+    }
+  });
+}
+</script>
+</body>
+</html>
