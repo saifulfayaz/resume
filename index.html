@@ -52,6 +52,9 @@ body.menu-open{overflow:hidden}
 img,svg{max-width:100%}
 a{color:inherit}
 ::selection{background:rgba(181,101,29,.22);color:var(--copper-2)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-offset:3px;border-radius:2px}
+
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--copper);width:0%;z-index:1100;transition:width .1s linear}
 ::-webkit-scrollbar{width:10px}
 ::-webkit-scrollbar-track{background:var(--paper-2)}
 ::-webkit-scrollbar-thumb{background:#c7cdbe;border:2px solid var(--paper-2);border-radius:99px}
@@ -188,8 +191,9 @@ a{color:inherit}
 .nameplate-stack{display:grid;gap:14px}
 .nameplate{
   background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);
-  padding:18px 20px;position:relative;
+  padding:18px 20px;position:relative;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
+.nameplate:hover{transform:translateY(-3px);box-shadow:0 10px 24px -14px rgba(14,23,32,.35);border-color:var(--line-strong)}
 .nameplate::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;background:var(--copper)}
 .nameplate .np-tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--copper-2);display:block;margin-bottom:6px}
 .nameplate h3{font-family:var(--display);font-size:19px;color:var(--ink);margin-bottom:5px;letter-spacing:-.01em}
@@ -245,7 +249,8 @@ a{color:inherit}
 
 /* ===== PROJECTS (spec sheets) ===== */
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.spec{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);padding:26px 26px 22px;position:relative}
+.spec{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);padding:26px 26px 22px;position:relative;transition:transform .2s ease, box-shadow .2s ease}
+.spec:hover{transform:translateY(-3px);box-shadow:0 12px 26px -16px rgba(14,23,32,.35)}
 .spec-tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--copper-2);display:inline-block;margin-bottom:12px;border-bottom:1px solid var(--line-strong);padding-bottom:8px;width:100%}
 .spec h3{font-family:var(--display);font-size:21px;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em}
 .spec p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:16px}
@@ -253,7 +258,8 @@ a{color:inherit}
 
 /* ===== SKILLS (panel board) ===== */
 .panel-board{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:var(--radius);overflow:hidden}
-.panel{background:var(--surface);padding:24px 22px}
+.panel{background:var(--surface);padding:24px 22px;transition:background .2s ease}
+.panel:hover{background:var(--paper-2)}
 .panel-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .panel-icon{width:34px;height:34px;border-radius:var(--radius);background:var(--paper-2);display:grid;place-items:center;flex:none}
 .panel-icon svg{width:17px;height:17px;color:var(--copper-2)}
@@ -272,7 +278,18 @@ a{color:inherit}
 .tb-cell .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7c8d85;display:block;margin-bottom:8px}
 .tb-cell a,.tb-cell .v{color:var(--on-graphite);font-size:14px;font-weight:600;text-decoration:none;word-break:break-word}
 .tb-cell a:hover{color:var(--copper)}
-.tb-cell.copy-btn{cursor:pointer;background:transparent;border:none;text-align:left;font-family:var(--body);width:100%}
+.tb-row{display:flex;align-items:center;gap:10px}
+.copy-icon{
+  flex:none;width:26px;height:26px;border-radius:5px;border:1px solid #33413c;background:#1a2226;
+  color:#93a19b;display:grid;place-items:center;cursor:pointer;transition:.2s ease;padding:0;
+}
+.copy-icon:hover{border-color:var(--copper);color:var(--copper)}
+.copy-icon svg{width:13px;height:13px}
+.copy-feedback{
+  display:block;font-family:var(--mono);font-size:10.5px;color:#7c8d85;height:0;overflow:hidden;
+  opacity:0;transition:opacity .2s ease;margin-top:0;
+}
+.copy-feedback.show{opacity:1;height:auto;margin-top:6px}
 
 .resume-strip{padding:64px 0}
 .resume-inner{
@@ -327,6 +344,7 @@ a{color:inherit}
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="site-nav" id="topNav">
   <div class="nav-inner">
@@ -350,7 +368,7 @@ a{color:inherit}
       <a class="icon-btn" href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener" aria-label="LinkedIn profile">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
-      <a class="nav-cta" href="" download>
+      <a class="nav-cta" href="cv.pdf" download>
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
         Resume
       </a>
@@ -369,7 +387,7 @@ a{color:inherit}
     <a href="#projects">Projects <span>04</span></a>
     <a href="#skills">Skills <span>05</span></a>
     <a href="#contact">Contact <span>06</span></a>
-    <a href="cv.pdf" download="Saif_Ul_Fayaz_Resume.pdf">Download Resume <span></span></a>
+    <a href="cv.pdf" download>Download Resume <span>↗</span></a>
   </div>
 </div>
 
@@ -465,7 +483,6 @@ a{color:inherit}
       <div class="about-grid">
         <div class="about-copy reveal">
           <p>I'm a <strong>final-year Electrical Engineering student</strong> at the University of Kashmir, graduating in 2026. My focus sits on electrical systems, power infrastructure and the engineering behind modern energy networks — not the theory in isolation, but how it holds up in an actual substation.</p>
-          <p>Alongside the degree, I hold an <strong>NCVT-certified COPA diploma</strong> from ITI Bandipora, which gives me a practical computing and documentation base to go with the core electrical training.</p>
           <p>My internship at the <strong>Kishanganga Hydroelectric Power Station</strong> under NHPC Limited put me in front of utility-scale generation, HV substations and grid-level operations — and the safety discipline that runs underneath all of it.</p>
           <p>I'm from Bandipora, a district with real renewable-energy potential, which is a good part of why reliable, sustainable energy infrastructure is the direction I want to build a career in.</p>
         </div>
@@ -481,9 +498,9 @@ a{color:inherit}
             <p>University of Kashmir · 8th semester · graduating 2026.</p>
           </div>
           <div class="nameplate reveal">
-            <span class="np-tag">Credential</span>
-            <h3>NCVT COPA Diploma</h3>
-            <p>Computer Operator &amp; Programming Assistant, ITI Bandipora.</p>
+            <span class="np-tag">Experience</span>
+            <h3>NHPC Internship</h3>
+            <p>Kishanganga Hydroelectric Power Station, 2024 – 2025.</p>
           </div>
         </div>
       </div>
@@ -505,13 +522,6 @@ a{color:inherit}
           <div class="feeder-card">
             <div class="feeder-top"><h3>B.Tech — Electrical Engineering<span class="status">Ongoing</span></h3><span class="period mono">2022 — 2026</span></div>
             <p>University of Kashmir. Currently in the 8th and final semester, with coursework across power systems, electrical machines, circuit theory, control systems, electronics, instrumentation, energy management and restructuring of power systems.</p>
-          </div>
-        </article>
-        <article class="feeder-item reveal">
-          <div class="breaker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/><path d="M21 12a9 9 0 1 1-6.3-8.6"/></svg></div>
-          <div class="feeder-card">
-            <div class="feeder-top"><h3>COPA — Computer Operator &amp; Programming Assistant<span class="status">NCVT</span></h3><span class="period mono">Diploma</span></div>
-            <p>ITI Bandipora. National Council for Vocational Training certification covering IT fundamentals, MS Office, basic programming and computer operations.</p>
           </div>
         </article>
         <article class="feeder-item reveal">
@@ -606,10 +616,10 @@ a{color:inherit}
             <div class="chips"><span class="chip">RPS</span><span class="chip">LMP</span><span class="chip">Energy Markets</span></div>
           </article>
           <article class="spec reveal">
-            <span class="spec-tag">Supporting Skillset</span>
-            <h3>Computing Foundation</h3>
-            <p>NCVT COPA background supporting documentation, data handling, technical reporting and practical computer operations.</p>
-            <div class="chips"><span class="chip">MS Office</span><span class="chip">Data</span><span class="chip">Programming Basics</span></div>
+            <span class="spec-tag">Technical Focus</span>
+            <h3>Machines &amp; Control</h3>
+            <p>Coursework in electrical machines, control systems and instrumentation, applied toward understanding how theory holds up in live operating conditions.</p>
+            <div class="chips"><span class="chip">Electrical Machines</span><span class="chip">Control Systems</span><span class="chip">Instrumentation</span></div>
           </article>
         </div>
       </div>
@@ -669,10 +679,19 @@ a{color:inherit}
           <p>Reach out through email, phone or LinkedIn — whichever's easiest. I usually reply within a day.</p>
         </div>
         <div class="tb-grid">
-          <div class="tb-cell"><span class="k">Email</span><a href="mailto:contact@saiful.in">contact@saiful.in</a></div>
+          <div class="tb-cell tb-email">
+            <span class="k">Email</span>
+            <div class="tb-row">
+              <a href="mailto:contact@saiful.in">contact@saiful.in</a>
+              <button class="copy-icon" type="button" data-copy="contact@saiful.in" aria-label="Copy email address" title="Copy email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <span class="copy-feedback" id="copyText" aria-live="polite"></span>
+          </div>
           <div class="tb-cell"><span class="k">Phone</span><a href="tel:+917889951631">+91 78899 51631</a></div>
           <div class="tb-cell"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/saifulfayaz" target="_blank" rel="noopener">saifulfayaz</a></div>
-          <div class="tb-cell"><button class="copy-btn" type="button" data-copy="contact@saiful.in"><span class="k">Quick Copy</span><span class="v" id="copyText">Click to copy email</span></button></div>
+          <div class="tb-cell"><span class="k">Location</span><span class="v">Bandipora, J&amp;K, India</span></div>
         </div>
       </div>
     </div>
@@ -736,6 +755,16 @@ mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 mobilePanel.addEventListener('click', event => { if(event.target === mobilePanel) closeMenu(); });
 document.addEventListener('keydown', event => { if(event.key === 'Escape') closeMenu(); });
 
+const scrollProgress = document.getElementById('scrollProgress');
+function updateScrollProgress(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+updateScrollProgress();
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -763,11 +792,13 @@ if(copyBtn && copyText){
   copyBtn.addEventListener('click', async () => {
     try{
       await navigator.clipboard.writeText(copyBtn.dataset.copy);
-      copyText.textContent = 'Email copied';
-      setTimeout(() => copyText.textContent = 'Click to copy email', 1600);
+      copyText.textContent = 'Copied to clipboard';
     }catch(error){
-      copyText.textContent = copyBtn.dataset.copy;
+      copyText.textContent = 'Copy failed — select manually';
     }
+    copyText.classList.add('show');
+    clearTimeout(copyBtn._copyTimeout);
+    copyBtn._copyTimeout = setTimeout(() => copyText.classList.remove('show'), 1800);
   });
 }
 </script>
