@@ -402,7 +402,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
   --shadow-lg:0 34px 80px -38px rgba(17,24,32,.48);
 }
 
-html{scroll-padding-top:88px}
+html{scroll-padding-top:88px;overflow-x:hidden}
 body{
   background:
     radial-gradient(circle at 12% 8%, rgba(185,104,42,.10), transparent 24%),
@@ -651,6 +651,81 @@ body{background-attachment:scroll !important}
   }
 }
 
+
+/* ===== FINAL RECRUITER-FOCUSED REFINEMENTS ===== */
+.reveal{opacity:1 !important;transform:none !important;transition:none !important}
+.section{padding:115px 0 !important}
+.section-head{margin-bottom:52px !important}
+.hero::before{
+  color:#111820 !important;
+  opacity:.055 !important;
+  right:clamp(16px,8vw,120px) !important;
+  top:36px !important;
+}
+.highlight-grid{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
+.project-grid{grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr) !important}
+.project-feature{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  overflow:hidden;
+}
+.project-feature .project-intro{font-size:14.5px;line-height:1.8;margin-bottom:20px}
+.project-metrics{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:4px 0 20px;
+}
+.project-metric{
+  padding:14px 15px;
+  border:1px solid rgba(17,24,32,.11);
+  border-radius:13px;
+  background:rgba(247,244,238,.68);
+}
+.project-metric strong{
+  display:block;
+  font-family:var(--display);
+  font-size:17px;
+  line-height:1.25;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.project-metric span{
+  display:block;
+  font-family:var(--mono);
+  font-size:9.5px;
+  line-height:1.5;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:22px}
+.project-actions .btn{height:46px;padding-inline:18px;font-size:12px}
+.project-note{
+  margin-top:12px;
+  font-family:var(--mono);
+  font-size:10px;
+  line-height:1.6;
+  color:var(--muted);
+}
+@media(max-width:980px){
+  .highlight-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .project-grid{grid-template-columns:1fr !important}
+}
+@media(max-width:720px){
+  .circuit-bg{display:none !important}
+  .section{padding:76px 0 !important}
+  .section-head{margin-bottom:38px !important}
+  .hero::before{color:#111820 !important;opacity:.05 !important;right:4px !important;top:78px !important}
+  .highlight-grid{grid-template-columns:1fr !important}
+  .project-metrics{grid-template-columns:1fr 1fr}
+  .project-actions .btn{width:100%}
+}
+@media(max-width:440px){
+  .project-metrics{grid-template-columns:1fr}
+}
+
 </style>
 
 </head>
@@ -881,20 +956,24 @@ body{background-attachment:scroll !important}
         </div>
         <div class="exp-main">
           <div class="exp-kicker">Engineering Internship · 2024–2025</div>
-          <h3>Utility-grade hydropower exposure</h3>
-          <p>Completed an internship at the Kishanganga Hydroelectric Power Station — a major run-of-river project operated by NHPC Limited. The experience translated classroom learning into practical understanding of generation units, substation infrastructure, power evacuation and safety-focused utility operation.</p>
+          <h3>Practical exposure to utility-scale hydropower</h3>
+          <p>Completed an engineering internship at Kishanganga Hydroelectric Power Station under NHPC Limited. The training connected academic power-system concepts with the operating environment of a generating station, including generation equipment, high-voltage substation infrastructure, control and monitoring practices, power evacuation, technical reporting and safety-led utility procedures.</p>
           <div class="highlight-grid">
             <div class="highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-14h-8Z"/></svg>
-              <strong>Power Generation</strong><span>Hydropower systems and energy conversion process.</span>
+              <strong>Generation Systems</strong><span>Observed the hydropower energy-conversion chain and generating-station equipment.</span>
             </div>
             <div class="highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/><circle cx="12" cy="12" r="9"/></svg>
-              <strong>HV Substations</strong><span>High-voltage infrastructure and operational safety.</span>
+              <strong>HV Infrastructure</strong><span>Developed practical understanding of substation equipment and power evacuation.</span>
             </div>
             <div class="highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17 10 11l4 4 6-8"/><path d="M20 7v6h-6"/></svg>
-              <strong>Grid Operations</strong><span>Power evacuation and national grid integration.</span>
+              <strong>Monitoring &amp; Control</strong><span>Learned how operating information supports coordinated and reliable plant operation.</span>
+            </div>
+            <div class="highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <strong>Safety Procedures</strong><span>Gained awareness of disciplined operating practices and electrical safety protocols.</span>
             </div>
           </div>
           <div class="chips">
@@ -912,16 +991,30 @@ body{background-attachment:scroll !important}
           <div class="eyebrow"><span class="num">04</span>Selected Work</div>
           <h2 class="section-title">Projects &amp; <em>focus</em></h2>
         </div>
-        <p class="section-lead">A portfolio should show direction, not only qualifications — this is what I'm building around right now.</p>
+        <p class="section-lead">Engineering work presented through its architecture, tools, implementation and practical relevance.</p>
       </div>
       <div class="project-grid">
-        <article class="spec reveal">
-          <span class="spec-tag">Final Year Project</span>
-          <h3>Solid State Transformer</h3>
-          <p>Academic project work focused on modern power-electronic transformer concepts, control, conversion stages and cleaner integration of electrical energy systems.</p>
-          <div class="chips">
-            <span class="chip">Power Electronics</span><span class="chip">SST</span><span class="chip">MATLAB / Simulink</span><span class="chip">Control Systems</span>
+        <article class="spec project-feature reveal">
+          <span class="spec-tag">B.Tech Final Year Project · Design, Modelling &amp; Prototype</span>
+          <h3>Solid-State Transformer</h3>
+          <p class="project-intro">Designed and evaluated a single-phase, three-stage Solid-State Transformer comprising an AC–DC rectifier, an isolated DC–DC conversion stage and a DC–AC inverter. The work combined MATLAB/Simulink steady-state analysis with a low-voltage hardware prototype to study controlled power conversion and future-grid applications.</p>
+          <div class="project-metrics" aria-label="Project highlights">
+            <div class="project-metric"><strong>50 W</strong><span>Designed power rating</span></div>
+            <div class="project-metric"><strong>3 stages</strong><span>AC–DC · DC–DC · DC–AC</span></div>
+            <div class="project-metric"><strong>MATLAB/Simulink</strong><span>Modelling and analysis</span></div>
+            <div class="project-metric"><strong>Hardware prototype</strong><span>Low-voltage implementation</span></div>
           </div>
+          <div class="chips">
+            <span class="chip">Power Electronics</span><span class="chip">SST</span><span class="chip">MATLAB / Simulink</span><span class="chip">SPWM</span><span class="chip">Isolated DC–DC</span><span class="chip">Control Systems</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="dissertation.pdf" target="_blank" rel="noopener" aria-label="Open Solid-State Transformer dissertation PDF">
+              View Dissertation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
+            </a>
+            <a class="btn btn-soft" href="#contact">Discuss This Project</a>
+          </div>
+          <p class="project-note">The complete design, modelling, implementation and performance analysis are documented in the dissertation.</p>
         </article>
         <div class="project-list">
           <article class="spec reveal">
